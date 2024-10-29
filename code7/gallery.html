@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        /* CSS to display images side by side */
+        .gallery {
+            display: flex;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 30%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <img src="{{ url_for('static', filename='candle1.jpeg') }}" alt="Image 1">
+        <img src="{{ url_for('static', filename='candle2.jpeg') }}" alt="Image 2">
+        <img src="{{ url_for('static', filename='candle3.jpeg') }}" alt="Image 3">
+    </div>
+</body>
+</html>
