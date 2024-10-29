@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form action="/feedbacks" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Feedback History</h2>
+    <ul>
+        {% for user, feedbacks in feedbacks.items() %}
+            <li><strong>{{ user }}:</strong>
+                <ul>
+                    {% for feedback in feedbacks %}
+                        <li>{{ feedback }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
